@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<br lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>Ваше имя </h1>
+<div">
+<input type="text"
+placeholder="Введите ваше имя" id="input">
+</div>
+<div>
+<button class="add" onclick="sumInput()">Готово</button>
+</div>
+<script>
+let names=[]; 
+function sumInput(){
+let a=document.querySelector("#input").value;
+names.push(a);
+alert(a+", ваше имя добавлено!");
+console.log(a);
+}
+
+</script>
+</body>
+</html>
