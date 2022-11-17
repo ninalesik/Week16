@@ -6,22 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<h1>Ваше имя </h1>
+<main>
+<h1>Ваша цифра </h1>
 <div">
-<input type="text"
-placeholder="Введите ваше имя" id="input">
+<label for="input">Введите число</label>
+<input type="number" value=""
+placeholder="Введите цифру" id="input">
 </div>
 <div>
 <button class="add" onclick="sumInput()">Готово</button>
 </div>
+<div id="result"></div>
+</main>
 <script>
-let names=[]; 
+let numbers=[]; 
+const clearInput=(a)=>{
+a.value="";
+}
+const showResult=()=>{
+    const resultBlock=document.getElementById('result');
+    numbers.sort()
+    resultBlock.innerHTML=(numbers.sort((a, b)=>a-b)).join();
+}
+let sum=0;
 function sumInput(){
 let a=document.querySelector("#input").value;
-names.push(a);
-alert(a+", ваше имя добавлено!");
-console.log(a);
+numbers.push(Number(a));
+clearInput(a);
+showResult();
+console.log(numbers);
 }
+
+
 
 </script>
 </body>
