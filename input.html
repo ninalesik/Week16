@@ -17,6 +17,7 @@ placeholder="Введите цифру" id="input">
 <button class="add" onclick="sumInput()">Готово</button>
 </div>
 <div id="result"></div>
+<div id="resultSum"></div>
 </main>
 <script>
 let numbers=[]; 
@@ -28,15 +29,22 @@ const showResult=()=>{
     numbers.sort()
     resultBlock.innerHTML=(numbers.sort((a, b)=>a-b)).join();
 }
-let sum=0;
+const showSum=()=>{
+    const sum=document.getElementById('resultSum');
+    numbers.reduce((a,b)=>a+b);
+    sum.innerHTML=(numbers.reduce((a,b)=>a+b));
+
+}
+
 function sumInput(){
 let a=document.querySelector("#input").value;
 numbers.push(Number(a));
 clearInput(a);
 showResult();
+showSum();
 console.log(numbers);
+console.log(sum);
 }
-
 
 
 </script>
